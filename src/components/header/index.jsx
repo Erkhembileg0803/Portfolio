@@ -1,14 +1,27 @@
 import { Link } from 'react-router-dom';
 import './header.scss';
+import { useState } from 'react';
 
 export default function Header(){
+     const [respMenu, setMenu] = useState(false);
      return <header>
-          <h2 className='name'>Erkhembileg <span>Batzorig</span></h2>
+          <h2 className='name'><Link to='/'>Erkhembileg</Link> <span>Batzorig</span></h2>
           <div className="links">
-               <Link>About</Link>
+               <Links/>
+          </div>
+          <i class="fa fa-bars" id='menuBtn' onClick={() => setMenu(!respMenu)}></i>
+          {respMenu && <div className="responsiveMenu">
+               <Links/>
+          </div>}
+     </header>
+}
+
+function Links(){
+     return <>
+      <Link>About</Link>
                <Link>Skills</Link>
                <Link>Projects</Link>
                <Link>Contacts</Link>    
-          </div>
-     </header>
+               <Link>Aviation</Link>   
+     </>
 }

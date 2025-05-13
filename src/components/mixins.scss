@@ -1,6 +1,7 @@
 $main: #111111;
 $font: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 $border: rgb(58, 58, 58);
+$links: #31929A;
 @mixin flex($align,$justify,$direction,$gap){
      display: flex;
      align-items: $align;

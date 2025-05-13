@@ -1,5 +1,6 @@
 @use '../mixins.scss' as *;
 
+
 .homepage{
      @include size(auto, auto, $main, white);
      min-height: 100vh;
@@ -10,15 +11,28 @@
      ;
      main{
           grid-area: main;
-          @include grid(auto, 1fr 53% 1fr, start, start);
+          @include grid(auto, 22% auto 22%, start, start);
           width: 100%;
+          @media only screen and (max-width:1000px){
+               grid-template-columns: 5% auto 5%;
+          }
+          @media only screen and (max-width: 420px){
+               grid-template-columns: 1fr;
+          }
           .main{
+               h1{
+                    font-family: sans-serif;
+                    font-size: 3rem;
+               }
                grid-column: 2;
+               @media only screen and (max-width:420px){
+                    grid-column: 1;
+               }
                width: 100%;
                height: 100%;
                .bioContainer{
                     @include flex(center,center,row,0);
-                    min-height: 400px;
+                    min-height: 300px;
                     .bio{
                          border: 1px solid $border;
                          width: 100%;
@@ -26,9 +40,9 @@
                          border-radius: 15px;
                          padding: 25px;
                          h1{
-                              height: 40px;
+                              min-height: 40px;
+                              padding: 5px;
                               font-size: 1.8rem;
-                              font-family: $font;
                               @include flex(center,space-between,row,0);
                               div{
                                    @include flex(center,center,row,15px);
@@ -52,10 +66,179 @@
 
                          p{
                               height: 70px;
-                              font-size: 1.2rem;
+                              font-size: 1.4rem;
                               @include flex(center,start,row,0);
                          }
 
+                    }
+               }
+
+
+               .skillsContainer{
+                    min-height: 350px;
+                    .skills{
+                     display: flex;
+                     flex-direction: column;
+                     height: 250px;
+                         div{
+                              padding: 15px;
+                              @include flex(start,space-evenly,row,15px);
+                              flex-wrap: wrap;
+                              margin-bottom: 15px;
+                              border-radius: 5px;
+                              border: 1px solid $border;
+                              height: 300px;
+                              span{
+                                   width: 150px;
+                                   height: 60px;
+                                   @include flex(center,center,row,0);
+                                   font-size: 1.5rem;
+                                   svg{
+                                        width: 50px;
+                                        height: 50px;
+                                   }
+                              }
+                         }
+                    }
+               }
+
+
+
+               .experienceContainer{
+                    min-height: 600px;
+                    .experience{
+                         .container{
+                              @include grid(1fr, 50px 1fr, start ,start);
+                              min-height: 150px;
+                              .arrow{
+                                   @include flex(center,center,row,0);
+                                   height: 100%;
+                                   position: relative;
+                                   .dot{
+                                        border-radius: 50%;
+                                        background-color: rgb(74, 191, 113);
+                                        width: 15px;
+                                        border: 4px white solid;
+                                        height: 15px;
+                                        z-index: 2;
+                                   }
+                                   .line{
+                                        background-color: white;
+                                        position: absolute;
+                                        width: 1px;
+                                        height: 100%;
+                                        
+                                   }
+                                   .top{
+                                        height: 50%;
+                                        bottom: 0;
+                                   }
+                                   .middle{
+                                        height: 100%;
+                                   }
+                                   .bottom{
+                                        top: 0;
+                                        height: 50%;
+                                   }
+                              }
+                              .information{
+                                   grid-column: 2;
+                                   @include flex(start,end,column,0);
+                                   height: 100%;
+                                   width: 100%;
+                                   .title{
+                                        color: $links;
+                                        font-size: 1.5rem;
+                                        font-family: sans-serif;
+                                        
+                                   }
+                                   .date{
+                                        color: rgb(159, 159, 159);
+                                   }
+                                   .description{
+                                        min-height: 20px;
+                                        padding: 10px;
+                                        padding-left: 0;
+                                        font-size: 1.5rem;
+                                        color: rgb(216, 216, 216);
+                                   }
+                              }
+                         }
+                    }
+               }
+
+
+
+               .projectsContainer{
+                    min-height: 600px;
+                    .projects{
+                         padding-top: 25px;
+                         .container{
+                         height: 450px;
+                         margin-bottom: 15px;
+                         border-radius: 15px;
+                         width: 100%;
+                         border: 3px solid $border;
+                         position: relative;
+                         z-index: 2;
+                         overflow: hidden;
+                         box-shadow: 0 -20px 80px -20px #ffffff1f inset;
+                         transition: all 0.3s ease;
+                         cursor: pointer;
+                         @include grid(1fr 40%, 1fr, start, start);
+                         .info{
+                              transition: all 0.3s ease;
+                              padding: 30px;
+                              padding-bottom: 0;
+                              .title{
+                                   font-family: sans-serif;
+                                   font-size: 1.5rem;
+                                   color: rgb(227, 227, 227);
+                                   min-height: 50px;
+                              }
+                              span{
+                                   background-color: $main;
+                                   border: 1px solid $border;
+                                   padding: 10px;
+                                   min-width: 60px;
+                                   font-size: 1.4rem;
+                                   margin-left: 15px;
+                                   min-height: 50px;
+                                   border-radius: 10px;
+                              }
+                              span:nth-of-type(1){
+                                   margin-left: 0;
+                              }
+                              .description{
+                                   min-height: 70px;
+                                   color: rgb(233, 233, 233);
+                                   font-size: 1.3rem;
+                                   @include flex(center,start,row,0);
+                              }
+                              button{
+                                   margin-top: 5px;
+                                   padding: 10px;
+                                   background-color: rgb(149, 149, 149);
+                                   color: white;
+                                   font-size: 1.1rem;
+                                   height: 25px;
+                                   opacity: 0.5;
+                                   @include flex(center,center,row, 5px);
+                                   border-radius: 10px;
+                                   border: none;
+                                   transition: all 0.6 ease;
+                              }
+                              i{
+                                   font-size: 0.8rem;
+                              }
+                         }
+                         &:hover .info{
+                              transform: translateY(-50px);
+                         }
+                         &:hover .info button{
+                              opacity: 1;
+                         }
+                         }
                     }
                }
           }
