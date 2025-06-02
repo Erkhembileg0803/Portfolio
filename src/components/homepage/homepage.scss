@@ -149,11 +149,25 @@
                                    .title{
                                         color: $links;
                                         font-size: 1.5rem;
-                                        font-family: sans-serif;
-                                        
+                                        font-family: sans-serif; 
+                                        position: relative;
+                                        cursor: pointer;
+                                        &:before{
+                                             content: '';
+                                             position: absolute;
+                                             width: 0;
+                                             height: 2px;
+                                             background-color: $links;
+                                             top: 100%; 
+                                             transition: width 0.2s ease;
+                                        }
+                                        &:hover::before{
+                                             width: 100%;
+                                        }
                                    }
                                    .date{
                                         color: rgb(159, 159, 159);
+                                        margin-top: 2px;
                                    }
                                    .description{
                                         min-height: 20px;
@@ -175,7 +189,7 @@
                          padding-top: 25px;
                          .container{
                          height: 450px;
-                         margin-bottom: 15px;
+                         margin-bottom: 35px;
                          border-radius: 15px;
                          width: 100%;
                          border: 3px solid $border;
@@ -186,10 +200,24 @@
                          transition: all 0.3s ease;
                          cursor: pointer;
                          @include grid(1fr 40%, 1fr, start, start);
+                    
+                          img{
+                                position: absolute;
+                                width: 100%;
+                                grid-row: 1;
+                                z-index: 1;
+                                box-shadow: 0 -20px 80px -20px rgba(255, 255, 255, 0.12);
+                               mask-image: linear-gradient(to top, transparent 20%, #000 100%);
+                               opacity: 70%;
+                               transition: all 0.3s ease;
+                               border: none;
+                          }
                          .info{
                               transition: all 0.3s ease;
+                              grid-row: 2;
                               padding: 30px;
                               padding-bottom: 0;
+                              z-index: 2;
                               .title{
                                    font-family: sans-serif;
                                    font-size: 1.5rem;
@@ -215,7 +243,7 @@
                                    font-size: 1.3rem;
                                    @include flex(center,start,row,0);
                               }
-                              button{
+                              .button{
                                    margin-top: 5px;
                                    padding: 10px;
                                    background-color: rgb(149, 149, 149);
@@ -223,10 +251,13 @@
                                    font-size: 1.1rem;
                                    height: 25px;
                                    opacity: 0.5;
+                                   width: auto;
+                                   display: block;
                                    @include flex(center,center,row, 5px);
                                    border-radius: 10px;
                                    border: none;
-                                   transition: all 0.6 ease;
+                                   transition: all 0.3s ease;
+                                   cursor: pointer;
                               }
                               i{
                                    font-size: 0.8rem;
@@ -235,8 +266,11 @@
                          &:hover .info{
                               transform: translateY(-50px);
                          }
-                         &:hover .info button{
+                         &:hover .info .button{
                               opacity: 1;
+                         }
+                         &:hover img{
+                              transform: scale(1.05);
                          }
                          }
                     }
