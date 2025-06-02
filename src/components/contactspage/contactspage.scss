@@ -1,0 +1,51 @@
+@use '../mixins.scss' as *;
+
+.contactspage{
+     @include size(auto, auto, $main, white);
+     min-height: 100vh;
+     @include grid(auto 1fr auto, 1fr, '' , '');
+     grid-template-areas: 'header'
+                          'main'
+                          'footer'    
+     ;
+     main{
+          .main{
+               padding-top: 50px;
+               .container{
+                    border: 1px solid $border;
+                    width: 100%;
+                    min-height: 300px;
+                    border-radius: 15px;
+                    padding: 25px;
+                    h1{
+                         font-family: sans-serif;
+                         margin-bottom: 15px;
+                    }
+                    p{
+                         font-size: 1.4rem;
+                         color: rgb(182, 180, 180);
+                    }
+                    .links{
+                         width: 100%;
+                         margin: 0 auto;
+                         min-height: 150px;
+                         @include flex(center,space-evenly,row,0);
+                         .link{
+                              display: inline;
+                              min-width: 100px;
+                              height: 100px;
+                              text-align: center;
+                              i{
+                                   font-size: 3rem;
+                                   padding: 5px;
+                              }
+                              h3{
+                                   font-size: 1.3rem;
+                                   padding: 5px;
+                              }
+                         }
+                    }
+               }
+          }
+     }
+}

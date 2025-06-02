@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function Header(){
      const [respMenu, setMenu] = useState(false);
      return <header>
-          <h2 className='name'><Link to='/Portfolio'>Erkhembileg</Link> <span>Batzorig</span></h2>
+          <h2 className='name'><Link to='/Portfolio'>Эрхэмбилэг</Link> <span>Батзориг</span></h2>
           <div className="links">
                <Links/>
           </div>
@@ -18,10 +18,9 @@ export default function Header(){
 
 function Links(){
      return <>
-      <Link>About</Link>
-               <Link>Skills</Link>
-               <Link>Projects</Link>
-               <Link>Contacts</Link>    
-               <Link>Aviation</Link>   
+     <Link to='/Portfolio/'>Нүүр</Link>
+          <Link to='/Portfolio/About'>Тухай</Link>
+          <Link to='/Portfolio/Projects'>Төслүүд</Link>
+          <Link to='/Portfolio/Contacts'>Холбоо барих</Link>    
      </>
 }

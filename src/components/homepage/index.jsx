@@ -7,69 +7,37 @@ import HTML from '../svg/html';
 import GIT from '../svg/git';
 import CSS from '../svg/css';
 import { Link } from 'react-router-dom';
-import EduTest from '../pics/EduTest.png'
-import Mrbytelibrary from '../pics/mrbytelibrary.png'
-import HistoryReflection from '../pics/historyreflection.png'
+import Projects from '../projects';
 import { useState } from 'react';
 export default function Homepage(){
      const [experience, setExperience] = useState([
           {
                title: 'MrByteLibrary',
-               date: 'September, 2024 - October, 2024',
-               description: "First ever website my team built for a small tournament inside the computer science class.",
+               date: '2024 оны 9-р сар - 10-р сар',
+               description: "Компьютер шинжлэх ухааны ангид зохиогдсон жижиг тэмцээний хүрээнд манай баг хийсэн анхны вэбсайт.",
                position: 'top',
                link: 'https://erkhembileg0803.github.io/Mrbytelibrary',
           },
           {
                title: 'History Reflection',
-               date: 'January, 2025 - February, 2025',
-               description: "Did a small website for my friend designed for her competition, I thought that making a blog like website was better than the traditional presentations",
+               date: '2025 оны 1-р сар - 2-р сар',
+               description: "Найзынхаа тэмцээнд зориулж жижиг вэбсайт хийсэн, уламжлалт презентацийн оронд блог маягийн вэбсайт хийх нь илүү дээр гэж бодсон",
                position: 'middle',
                link: 'http://erkhembileg0803.github.io/historyreflection'
           },
           {
                title: 'AtIelts',
-               date: 'January, 2025 - February, 2025',
-               description: "It was supposed to be an IELTS practice website for my school ETC(English Training Center) but I kinda got burnt out.",
+               date: '2025 оны 1-р сар - 2-р сар',
+               description: "Сургуулийнхаа ETC (English Training Center)-д зориулсан IELTS дасгалын вэбсайт байх ёстой байсан ч би бага зэрэг ядарсан.",
                position: 'middle',
                link: '#'
           },
           {
                title: 'EduTest',
-               date: 'February, 2025 - May, 2025',
-               description: "An ongoing website for my school, built for students to take exams check their grades, and for teachers to assign new tests.  (haven't deployed yet.)",
+               date: '2025 оны 2-р сар - 5-р сар',
+               description: "Сургуулийнхаа сурагчдад зориулсан шалгалт өгөх, дүнгээ шалгах, багш нарт шинэ шалгалт даалгах боломжтой хийгдэж буй вэбсайт. (deploy хийгээгүй байгаа)",
                position: 'bottom',
                link: '#'
-          },
-     ])
-     const [project, setProject] = useState([
-          {
-               title: 'EduTest',
-               tools: ['Javascript', 'React', 'SCSS'],
-               description: "Website for students to take tests, and for teachers to make them.",
-               link: '#',
-               img: EduTest
-          },
-          {
-               title: 'AtIelts',
-               tools: ['Javascript', 'React', 'SCSS'],
-               description: "Website for students to practice for the IELTS test with retro-game style.",
-               link: '#',
-               img: '',
-          },
-          {
-               title: 'History Reflection',
-               tools: ['Javascript', 'React', 'SCSS'],
-               description: "A Blog-Like website dedicated for a competition.",
-               link: 'http://erkhembileg0803.github.io/historyreflection',
-               img: HistoryReflection,
-          },
-          {
-               title: 'MrByteLibrary',
-               tools: ['HTML', 'CSS'],
-               description: "A library website where I have put the books I read or I want to read.",
-               link: 'http://erkhembileg0803.github.io/Mrbytelibrary',
-               img: Mrbytelibrary,
           },
      ])
      return <>
@@ -79,23 +47,24 @@ export default function Homepage(){
           <div className='main'>
                <section className='bioContainer'>
                     <article className="bio">
-                         <h1>Erkhembileg Batzorig 
+                         <h1>Батзориг Эрхэмбилэг 
                               <div>
-                                   <a><i className="fa fa-instagram"></i></a>
-                                   <a><i className="fa fa-facebook"></i></a>
-                                   <a><i className="fa fa-github"></i></a>
+                                   <a href='https://www.instagram.com/erkhembilegbatzorig/' target='_blank'><i className="fa fa-instagram"></i></a>
+                                   <a href='https://www.facebook.com/HELLOHIHELO/' target='_blank'><i className="fa fa-facebook"></i></a>
+                                   <a href='https://github.com/Erkhembileg0803' target='_blank'><i className="fa fa-github"></i></a>
+                                   <a href='https://mail.google.com/mail/?view=cm&fs=1&to=b.erkhembileg0803@gmail.com' target='_blank'><i className="fa fa-envelope"></i></a>
                               </div>
                          </h1>
                          <div className='location'>
-                         <i class="fa fa-map-marker"></i> Mongolia, Ulaanbaatar
+                         <i class="fa fa-map-marker"></i> Монгол, Улаанбаатар
                          </div>
                          <p>
-                              17 years old software developer. "Future Pilot"
+                             Би front-end мэргэшсэн програм хангамж хөгжүүлэгч, мөн back-end api ашиглан front-end талдаа холбодог. Би вэбсайтыг янз бүрийн дэлгэцийн хэмжээст хариу үйлдэл үзүүлэхэд маш сайн. 
                          </p>
                     </article>
                </section>
                <section className='skillsContainer'>
-                     <h1>Skills</h1>
+                     <h1>Ур чадвар</h1> 
                     <article className='skills'>
                          <div>
                               <span><Javascript/>JavaScript</span>
@@ -108,7 +77,7 @@ export default function Homepage(){
                     </article>
                </section>
                <section className='experienceContainer'>
-                    <h1>Experience</h1>
+                    <h1>Туршлага</h1>
                     <article className='experience'>
                          {
                               experience.map(({title, date, description, position, link}) => (
@@ -117,16 +86,7 @@ export default function Homepage(){
                          }
                     </article>
                </section>
-               <section className='projectsContainer'>
-                    <h1>Projects</h1>
-                    <article className='projects'>
-                              {
-                                   project.map(({title, tools, description, link, img}) => (
-                                        <Project title={title} tools={tools} description={description} link={link} img={img}/>
-                                   ))
-                              }
-                    </article>
-               </section>
+               <Projects/> 
           </div>
      </main>
      </div>
@@ -145,18 +105,4 @@ function Experience(props){
                <span className="description">{description}</span>
            </div>
           </div>
-}
-function Project(props){
-     const {title, img, tools, description,link} = props;
-     return <Link to={link !== '#'? link : ''} className="container" target={link !== '#' ? '_blank' : ''}>
-               <img src={img}/>
-               <div className="info">
-                   <h3 className='title'>{title}</h3>
-                   {tools.map((tool, index) => (
-                    <span key={index}>{tool}</span>
-                   ))}
-                   <p className='description'>{description}</p>
-                   <button className='button'>Learn More  <i className="fa fa-arrow-right"></i></button>
-               </div>
-            </Link>
 }

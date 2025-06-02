@@ -1,0 +1,70 @@
+@use '../mixins.scss' as *;
+
+.previewpage{
+     @include size(auto, auto, $main, white);
+     min-height: 100vh;
+     @include grid(auto 1fr auto, 1fr, '' , '');
+     grid-template-areas: 'header'
+                          'main'
+                          'footer'    
+     ;
+     .descriptionContainer{
+          border: 1px solid $border;
+          width: 100%;
+          margin-top: 50px;
+          min-height: 200px;
+          border-radius: 15px;
+          padding: 25px;
+          h1{
+               font-size: 2.4rem;
+               font-family: sans-serif;
+               height: 70px;
+          }
+          div{
+           min-height: 50px;
+           span{
+           background-color: $main;
+           border: 1px solid $border;
+           padding: 10px;
+           min-width: 60px;
+           font-size: 1.4rem;
+           margin-left: 15px;
+           min-height: 50px;
+           border-radius: 10px;
+          }
+          }
+           span:nth-of-type(1){
+            margin-left: 0;
+          }
+          p{
+              font-size: 1.2rem;
+          }
+          a{
+              margin-top: 15px;
+              padding: 10px;
+               background-color: rgb(149, 149, 149);
+               color: white;
+               font-size: 1.1rem;
+               height: 25px;
+               max-width: 450px;
+               display: block;
+               @include flex(center,center,row, 5px);
+               border-radius: 10px;
+               border: none;
+               transition: all 0.3s ease;
+                cursor: pointer;
+          }
+     }
+
+
+     .imagesContainer{
+          padding-top: 50px;
+          padding-bottom: 50px;
+          
+          img{
+               width: 100%;
+               max-height: 500px;
+               margin-bottom: 15px;
+          }
+     }
+}

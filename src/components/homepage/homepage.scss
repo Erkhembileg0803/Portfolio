@@ -10,26 +10,11 @@
                           'footer'    
      ;
      main{
-          grid-area: main;
-          @include grid(auto, 22% auto 22%, start, start);
-          width: 100%;
-          @media only screen and (max-width:1000px){
-               grid-template-columns: 5% auto 5%;
-          }
-          @media only screen and (max-width: 420px){
-               grid-template-columns: 1fr;
-          }
           .main{
                h1{
                     font-family: sans-serif;
                     font-size: 3rem;
                }
-               grid-column: 2;
-               @media only screen and (max-width:420px){
-                    grid-column: 1;
-               }
-               width: 100%;
-               height: 100%;
                .bioContainer{
                     @include flex(center,center,row,0);
                     min-height: 300px;
@@ -41,7 +26,7 @@
                          padding: 25px;
                          h1{
                               min-height: 40px;
-                              padding: 5px;
+                              padding-top: 5px;
                               font-size: 1.8rem;
                               @include flex(center,space-between,row,0);
                               div{
@@ -65,7 +50,8 @@
                          }
 
                          p{
-                              height: 70px;
+                              min-height: 70px;
+                              padding-top: 5px;
                               font-size: 1.4rem;
                               @include flex(center,start,row,0);
                          }
@@ -183,98 +169,6 @@
 
 
 
-               .projectsContainer{
-                    min-height: 600px;
-                    .projects{
-                         padding-top: 25px;
-                         .container{
-                         height: 450px;
-                         margin-bottom: 35px;
-                         border-radius: 15px;
-                         width: 100%;
-                         border: 3px solid $border;
-                         position: relative;
-                         z-index: 2;
-                         overflow: hidden;
-                         box-shadow: 0 -20px 80px -20px #ffffff1f inset;
-                         transition: all 0.3s ease;
-                         cursor: pointer;
-                         @include grid(1fr 40%, 1fr, start, start);
-                    
-                          img{
-                                position: absolute;
-                                width: 100%;
-                                grid-row: 1;
-                                z-index: 1;
-                                box-shadow: 0 -20px 80px -20px rgba(255, 255, 255, 0.12);
-                               mask-image: linear-gradient(to top, transparent 20%, #000 100%);
-                               opacity: 70%;
-                               transition: all 0.3s ease;
-                               border: none;
-                          }
-                         .info{
-                              transition: all 0.3s ease;
-                              grid-row: 2;
-                              padding: 30px;
-                              padding-bottom: 0;
-                              z-index: 2;
-                              .title{
-                                   font-family: sans-serif;
-                                   font-size: 1.5rem;
-                                   color: rgb(227, 227, 227);
-                                   min-height: 50px;
-                              }
-                              span{
-                                   background-color: $main;
-                                   border: 1px solid $border;
-                                   padding: 10px;
-                                   min-width: 60px;
-                                   font-size: 1.4rem;
-                                   margin-left: 15px;
-                                   min-height: 50px;
-                                   border-radius: 10px;
-                              }
-                              span:nth-of-type(1){
-                                   margin-left: 0;
-                              }
-                              .description{
-                                   min-height: 70px;
-                                   color: rgb(233, 233, 233);
-                                   font-size: 1.3rem;
-                                   @include flex(center,start,row,0);
-                              }
-                              .button{
-                                   margin-top: 5px;
-                                   padding: 10px;
-                                   background-color: rgb(149, 149, 149);
-                                   color: white;
-                                   font-size: 1.1rem;
-                                   height: 25px;
-                                   opacity: 0.5;
-                                   width: auto;
-                                   display: block;
-                                   @include flex(center,center,row, 5px);
-                                   border-radius: 10px;
-                                   border: none;
-                                   transition: all 0.3s ease;
-                                   cursor: pointer;
-                              }
-                              i{
-                                   font-size: 0.8rem;
-                              }
-                         }
-                         &:hover .info{
-                              transform: translateY(-50px);
-                         }
-                         &:hover .info .button{
-                              opacity: 1;
-                         }
-                         &:hover img{
-                              transform: scale(1.05);
-                         }
-                         }
-                    }
-               }
           }
      }
 }

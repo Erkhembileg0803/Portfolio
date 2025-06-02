@@ -1,0 +1,22 @@
+@use './components/mixins.scss' as *;
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+main{
+          grid-area: main;
+          @include grid(auto, 22% 1fr 22%, start, start);
+          width: 100%;
+          @media only screen and (max-width:1000px){
+               grid-template-columns: 5% 1fr 5%;
+          }
+          @media only screen and (max-width: 420px){
+               grid-template-columns: 1fr;
+          }
+          .main{
+               grid-column: 2;
+               height: 100%;
+               width: 100%;
+          }
+}
